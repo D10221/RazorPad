@@ -5,7 +5,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using AvalonDock;
 using NLog;
 using NLog.Config;
 using RazorPad.Compilation.Hosts;
@@ -15,6 +14,7 @@ using RazorPad.UI.Settings;
 using RazorPad.UI.Theming;
 using RazorPad.UI.Util;
 using RazorPad.ViewModels;
+using Xceed.Wpf.AvalonDock;
 
 namespace RazorPad.Views
 {
@@ -26,7 +26,7 @@ namespace RazorPad.Views
 
         protected MainViewModel ViewModel
         {
-            get { return (MainViewModel)DataContext; }
+            get { return DataContext as MainViewModel; }
             private set { DataContext = value; }
         }
 

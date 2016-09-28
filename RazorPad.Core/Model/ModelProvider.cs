@@ -45,7 +45,7 @@ namespace RazorPad
 
         protected void TriggerError(Exception ex)
         {
-            Log.ErrorException("Error rebuilding model", ex);
+            Log.Error(ex,"Error rebuilding model");
             TriggerError(new RazorPadError(ex));
         }
 

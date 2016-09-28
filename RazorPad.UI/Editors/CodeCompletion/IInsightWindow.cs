@@ -23,7 +23,7 @@ namespace RazorPad.UI.Editors.CodeCompletion
 		
 		/// <summary>
 		/// Occurs when the document is changed while the insight window is open.
-		/// Use this event to close the insight window or adjust <see cref="EndOffset"/>.
+		// Use this event to close the insight window or adjust <see cref="EndOffset"/>.
 		/// </summary>
 		/// <remarks>
 		/// Unlike directly attaching to <see cref="IDocument.TextChanged"/>, using the event does not require handlers to unsubscribe

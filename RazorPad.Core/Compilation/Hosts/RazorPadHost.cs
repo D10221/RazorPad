@@ -1,4 +1,5 @@
-﻿using System.CodeDom;
+﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace RazorPad.Compilation.Hosts
 // ReSharper restore DoNotCallOverridableMethodsInConstructor
         }
 
-        public override MarkupParser CreateMarkupParser()
+        public override ParserBase CreateMarkupParser()
         {
             return new HtmlMarkupParser();
         }
@@ -72,6 +73,7 @@ namespace RazorPad.Compilation.Hosts
             return base.DecorateCodeParser(incomingCodeParser);
         }
 
+        [Obsolete("This method is obsolete, use the override which takes a CodeGeneratorContext instead")]
         public override void PostProcessGeneratedCode(CodeCompileUnit codeCompileUnit, CodeNamespace generatedNamespace, CodeTypeDeclaration generatedClass, CodeMemberMethod executeMethod)
         {
             base.PostProcessGeneratedCode(codeCompileUnit, generatedNamespace, generatedClass, executeMethod);

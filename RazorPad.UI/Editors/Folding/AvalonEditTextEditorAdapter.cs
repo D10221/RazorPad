@@ -167,7 +167,8 @@ namespace RazorPad.UI.Editors.Folding
 
         public void JumpTo(int line, int column)
         {
-            textEditor.TextArea.ClearSelection();
+            //textEditor.TextArea.ClearSelection();
+
             textEditor.TextArea.Caret.Position = new TextViewPosition(line, column);
             // might have jumped to a different location if column was outside the valid range
             TextLocation actualLocation = textEditor.TextArea.Caret.Location;

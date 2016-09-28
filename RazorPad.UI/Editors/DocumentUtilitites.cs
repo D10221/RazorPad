@@ -18,7 +18,7 @@ namespace RazorPad.UI.Editors
 		/// Creates a new mutable document from the specified text buffer.
 		/// </summary>
 		/// <remarks>
-		/// Use the more efficient <see cref="LoadReadOnlyDocumentFromBuffer"/> if you only need a read-only document.
+		// Use the more efficient <see cref="LoadReadOnlyDocumentFromBuffer"/> if you only need a read-only document.
 		/// </remarks>
 		public static IDocument LoadDocumentFromBuffer(ITextBuffer buffer)
 		{
@@ -140,26 +140,26 @@ namespace RazorPad.UI.Editors
 		{
 			return char.IsLetterOrDigit(ch) || ch == '_';
 		}
-		
-		/// <summary>
-		/// Gets all indentation starting at offset.
-		/// </summary>
-		/// <param name="document">The document.</param>
-		/// <param name="offset">The offset where the indentation starts.</param>
-		/// <returns>The indentation text.</returns>
-		public static string GetWhitespaceAfter(ITextBuffer textBuffer, int offset)
+
+	    /// <summary>
+	    /// Gets all indentation starting at offset.
+	    /// </summary>
+	    /// <param name="textBuffer"></param>
+	    /// <param name="offset">The offset where the indentation starts.</param>
+	    /// <returns>The indentation text.</returns>
+	    public static string GetWhitespaceAfter(ITextBuffer textBuffer, int offset)
 		{
 			ISegment segment = TextUtilities.GetWhitespaceAfter(GetTextSource(textBuffer), offset);
 			return textBuffer.GetText(segment.Offset, segment.Length);
 		}
-		
-		/// <summary>
-		/// Gets all indentation before the offset.
-		/// </summary>
-		/// <param name="document">The document.</param>
-		/// <param name="offset">The offset where the indentation ends.</param>
-		/// <returns>The indentation text.</returns>
-		public static string GetWhitespaceBefore(ITextBuffer textBuffer, int offset)
+
+	    /// <summary>
+	    /// Gets all indentation before the offset.
+	    /// </summary>
+	    /// <param name="textBuffer"></param>
+	    /// <param name="offset">The offset where the indentation ends.</param>
+	    /// <returns>The indentation text.</returns>
+	    public static string GetWhitespaceBefore(ITextBuffer textBuffer, int offset)
 		{
 			ISegment segment = TextUtilities.GetWhitespaceBefore(GetTextSource(textBuffer), offset);
 			return textBuffer.GetText(segment.Offset, segment.Length);

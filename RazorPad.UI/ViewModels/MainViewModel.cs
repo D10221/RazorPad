@@ -405,7 +405,7 @@ namespace RazorPad.ViewModels
             }
             catch (Exception ex)
             {
-                Log.WarnException("Auto-save file found, but there was an error loading it.", ex);
+                Log.Warn(ex, "Auto-save file found, but there was an error loading it.");
             }
         }
 
@@ -451,7 +451,7 @@ namespace RazorPad.ViewModels
             }
             catch (Exception ex)
             {
-                Log.ErrorException("Error saving document", ex);
+                Log.Error(ex, "Error saving document");
                 Error.SafeInvoke(ex.Message);
             }
 
@@ -481,7 +481,7 @@ namespace RazorPad.ViewModels
                 }
                 catch (Exception ex)
                 {
-                    Log.WarnException("Auto-save failed", ex);
+                    Log.Warn(ex, "Auto-save failed");
                 }
             });
         }
